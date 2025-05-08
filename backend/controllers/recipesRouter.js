@@ -21,8 +21,9 @@ recipesRouter.get('/recipes', async (req, res) => {
 // post request for recipesRouter...
 recipesRouter.post('/recipes', async (req, res) => {
     try {
-        const { name, calories, category  } = req.body;
-        const newrecipes = new recipes({ name, calories, category });
+      const { name, calories, category  } = req.body;
+      const newrecipes = new recipesSchema({ name, calories, category });
+      
         await newrecipes.save();
         res.status(201).json({ message: 'recipes posted successfully!', data: newrecipes });
     } catch (error) {

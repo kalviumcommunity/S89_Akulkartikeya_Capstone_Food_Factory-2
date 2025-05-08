@@ -22,7 +22,7 @@ homeRouter.get('/home', async (req, res) => {
 homeRouter.post('/home', async (req, res) => {
     try {
         const { title, content, dietTips  } = req.body;
-        const newhome = new home({ title, content, dietTips });
+        const newhome = new homeSchema({ title, content, dietTips });
         await newhome.save();
         res.status(201).json({ message: 'homepage posted successfully!', data: newhome });
     } catch (error) {
