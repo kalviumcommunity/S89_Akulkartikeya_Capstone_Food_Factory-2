@@ -11,7 +11,7 @@ const recipesSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  catecategory: { // Note: keeping the typo "catecategory" to match your existing data
+  category: { 
     type: String,
     required: true,
   },
