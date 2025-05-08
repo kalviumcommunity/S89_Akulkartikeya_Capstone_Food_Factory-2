@@ -26,8 +26,8 @@ homeRouter.post('/home', async (req, res) => {
         await newhome.save();
         res.status(201).json({ message: 'homepage posted successfully!', data: newhome });
     } catch (error) {
-        console.error('Error posting cooki:', error);
-        res.status(500).json({ message: 'Error posting homepage', error });
+      console.error('Error posting home:', error);    
+       res.status(500).json({ message: 'Error posting homepage', error });
     }
   });
 

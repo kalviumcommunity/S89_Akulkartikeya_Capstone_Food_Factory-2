@@ -24,8 +24,8 @@ recipesRouter.post('/recipes', async (req, res) => {
       const { name, calories, category  } = req.body;
       const newrecipes = new recipesSchema({ name, calories, category });
       
-        await newrecipes.save();
-        res.status(201).json({ message: 'recipes posted successfully!', data: newrecipes });
+      await newrecipes.save();
+         res.status(201).json({ message: 'recipes posted successfully!', data: newrecipes });
     } catch (error) {
         console.error('Error posting recipes:', error);
         res.status(500).json({ message: 'Error posting recipes', error });
