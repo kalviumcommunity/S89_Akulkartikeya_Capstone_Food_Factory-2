@@ -17,17 +17,6 @@ cookiRouter.get('/cooki', async (req, res) => {
   
 });
 
-// post request for  cooki(cookAI)...
-cookiRouter.post('/cooki', async (req, res) => {
-    try {
-        const { name, description, features, sampleInteractions, personality, version  } = req.body;
-        const newcooki = new cooki({ name, description, features, sampleInteractions, personality, version });
-        await newcooki.save();
-        res.status(201).json({ message: 'cooki posted successfully!', data: newcooki });
-    } catch (error) {
-        console.error('Error posting cooki:', error);
-        res.status(500).json({ message: 'Error posting cooki', error });
-    }
-  });
+
 
 module.exports = cookiRouter;
