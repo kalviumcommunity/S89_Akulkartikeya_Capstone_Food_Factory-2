@@ -5,7 +5,7 @@ const homeSchema = require('../models/homeSchema');
 
 
 
-// get request for home page
+// get request for home page.....
 homeRouter.get('/home', async (req, res) => {
   try {
     const home = await homeSchema.find();
@@ -18,7 +18,7 @@ homeRouter.get('/home', async (req, res) => {
   }
 });
 
-// post request for home page
+// post request for home page.....
 homeRouter.post('/home', async (req, res) => {
     try {
         const { title, content, dietTips  } = req.body;
@@ -30,6 +30,8 @@ homeRouter.post('/home', async (req, res) => {
        res.status(500).json({ message: 'Error posting homepage', error });
     }
   });
+
+
 
 
 module.exports = homeRouter;

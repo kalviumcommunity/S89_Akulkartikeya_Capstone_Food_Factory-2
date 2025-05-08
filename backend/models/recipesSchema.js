@@ -1,23 +1,15 @@
-// recipesSchema.js
-
 const mongoose = require('mongoose');
 
-const recipesSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  calories: {
-    type: String,
-    required: true,
-  },
-  category: { 
-    type: String,
-    required: true,
-  },
-}, {
+// Prevent Mongoose model overwrite in dev
+if (mongoose.models.Recipe) {
+  delete mongoose.models.Recipe;
+}
+
+const recipeSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  calories: { type: String, required: true },
+  category: { type: String, required: true }, 
 });
 
-const recipes = mongoose.model('recipes', recipesSchema);
-
-module.exports = recipes;
+const Recipe = mongoose.model('Recipe', recipeSchema);
+module.exports = Recipe;

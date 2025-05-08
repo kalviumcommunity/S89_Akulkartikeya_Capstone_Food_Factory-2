@@ -1,36 +1,31 @@
 const express = require('express');
 const recipesRouter = express.Router();
-const recipes = require('../models/recipesSchema');
-const recipesSchema = require('../models/recipesSchema');
+const Recipe = require('../models/recipesSchema'); // Correct model name
 
 
-
-// get request for recipesRouter...
+// GET request
 recipesRouter.get('/recipes', async (req, res) => {
   try {
-    const recipes = await recipesSchema.find();
-
-      
-      res.status(200).send(recipes); 
+    const allRecipes = await Recipe.find();
+    res.status(200).send(allRecipes); 
   } catch (error) {
-      console.error('Error fetching recipes:', error);
-      res.status(500).send({ message: 'Internal Server Error' }); 
+    console.error('Error fetching recipes:', error);
+    res.status(500).send({ message: 'Internal Server Error' }); 
   }
 });
 
-// post request for recipesRouter...
+// POST request
 recipesRouter.post('/recipes', async (req, res) => {
-    try {
-      const { name, calories, category  } = req.body;
-      const newrecipes = new recipesSchema({ name, calories, category });
-      
-      await newrecipes.save();
-         res.status(201).json({ message: 'recipes posted successfully!', data: newrecipes });
-    } catch (error) {
-        console.error('Error posting recipes:', error);
-        res.status(500).json({ message: 'Error posting recipes', error });
-    }
-  });
-
+  try {
+    
+    const { name, calories, category } = req.body;
+    const newRecipe = new Recipe({ name, calories, category });
+    await newRecipe.save();
+    res.status(201).json({ message: 'Recipe posted successfully!', data: newRecipe });
+  } catch (error) {
+    console.error('Error posting recipe:', error);
+    res.status(500).json({ message: 'Error posting recipe', error });
+  }
+});
 
 module.exports = recipesRouter;
