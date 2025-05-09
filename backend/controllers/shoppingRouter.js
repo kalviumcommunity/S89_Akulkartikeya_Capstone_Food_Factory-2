@@ -30,4 +30,32 @@ shoppingRouter.post('/shopping', async (req, res) => {
   }
 });
 
+// PUT request for shoppingRouter...
+shoppingRouter.put('/updateShopping/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send({ msg: "Please provide id" });
+    }
+
+    const { name, price, category, quantity } = req.body;
+    const updatedShopping = await shoppingSchema.findByIdAndUpdate(
+      id,
+      { name, price, category, quantity },
+      { new: true }
+    );
+
+    if (!updatedShopping) {
+      return res.status(404).send({ msg: "Shopping item not found" });
+    }
+
+    res.status(200).send({ msg: "Shopping item updated successfully", shopping: updatedShopping });
+  } catch (error) {
+    console.error('Error updating shopping item:', error);
+    res.status(500).send({ msg: "Error updating shopping item" });
+  }
+});
+
+
+
 module.exports = shoppingRouter;

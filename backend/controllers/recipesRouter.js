@@ -28,4 +28,30 @@ recipesRouter.post('/recipes', async (req, res) => {
   }
 });
 
+// PUT request for recipesRouter...
+recipesRouter.put('/updateRecipe/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send({ msg: "Please provide id" });
+    }
+
+    const { name, calories, category } = req.body;
+    const updatedRecipe = await Recipe.findByIdAndUpdate(
+      id,
+      { name, calories, category },
+      { new: true }
+    );
+
+    if (!updatedRecipe) {
+      return res.status(404).send({ msg: "Recipe not found" });
+    }
+
+    res.status(200).send({ msg: "Recipe updated successfully", recipe: updatedRecipe });
+  } catch (error) {
+    console.error('Error updating recipe:', error);
+    res.status(500).send({ msg: "Error updating recipe" });
+  }
+});
+
 module.exports = recipesRouter;
