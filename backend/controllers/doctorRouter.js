@@ -27,5 +27,30 @@ doctorRouter.post('/doctor', async (req, res) => {
   }
 });
 
+// put request for doctorRouter...
+doctorRouter.put('/updateDoctor/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send({ msg: "Please provide id" });
+    }
+
+    const { name, specialization, contact } = req.body;
+    const updatedDoctor = await doctorSchema.findByIdAndUpdate(
+      id,
+      { name, specialization, contact },
+      { new: true } 
+    );
+
+    if (!updatedDoctor) {
+      return res.status(404).send({ msg: "Doctor not found" });
+    }
+
+    res.status(200).send({ msg: "Doctor updated successfully", doctor: updatedDoctor });
+  } catch (error) {
+    console.error('Error updating doctor:', error);
+    res.status(500).send({ msg: "Error updating doctor" });
+  }
+});
 
 module.exports = doctorRouter;
