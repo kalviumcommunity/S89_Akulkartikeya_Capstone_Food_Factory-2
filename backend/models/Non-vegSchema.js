@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+if (mongoose.models.NonVeg) {
+  delete mongoose.models.NonVeg;
+}
 const nonVegSchema = new mongoose.Schema({
   name: {
     type: String,
