@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Prevent Mongoose model overwrite in dev
 if (mongoose.models.Recipe) {
   delete mongoose.models.Recipe;
 }
