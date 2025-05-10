@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// Check if the model already exists to avoid overwriting it
 if (mongoose.models.NonVeg) {
   delete mongoose.models.NonVeg;
 }
