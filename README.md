@@ -83,3 +83,7 @@ This is a proposed day-by-day plan for the development of the Food Factory proje
 * **Database:** PostgreSQL, MySQL, or MongoDB
 * **AI:** Python, TensorFlow, or other machine learning libraries
 * **Payment Gateway:** Stripe, PayPal
+
+# Render deploy url:
+* https://s89-akulkartikeya-capstone-food-factory-2.onrender.com
+
