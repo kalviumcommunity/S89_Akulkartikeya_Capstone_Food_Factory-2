@@ -2,7 +2,7 @@ const express = require('express');
 const homeRouter = express.Router();
 const homeSchema = require('../models/homeSchema'); // Correct import
 
-// get request for home page.....
+// GET request for home page.....
 homeRouter.get('/home', async (req, res) => {
   try {
     const home = await homeSchema.find();
@@ -13,7 +13,7 @@ homeRouter.get('/home', async (req, res) => {
   }
 });
 
-// post request for home page.....
+// POST request for home page.....
 homeRouter.post('/home', async (req, res) => {
   try {
     const { title, content, dietTips } = req.body;
@@ -26,7 +26,7 @@ homeRouter.post('/home', async (req, res) => {
   }
 });
 
-// put request for homeRouter...
+// PUT request for homeRouter...
 homeRouter.put('/updateHome/:id', async (req, res) => {
   try {
     const { id } = req.params;

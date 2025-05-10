@@ -3,7 +3,7 @@ const recipesRouter = express.Router();
 const Recipe = require('../models/recipesSchema'); // Correct model name
 
 
-// GET request
+// GET request for recipesRouter...
 recipesRouter.get('/recipes', async (req, res) => {
   try {
     const allRecipes = await Recipe.find();
@@ -14,7 +14,7 @@ recipesRouter.get('/recipes', async (req, res) => {
   }
 });
 
-// POST request
+// POST request for recipesRouter...
 recipesRouter.post('/recipes', async (req, res) => {
   try {
     

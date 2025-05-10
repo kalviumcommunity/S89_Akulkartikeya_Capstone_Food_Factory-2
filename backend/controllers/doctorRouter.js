@@ -2,7 +2,7 @@ const express = require('express');
 const doctorRouter = express.Router();
 const doctorSchema = require('../models/doctorSchema');
 
-// get request for doctorRouter...
+// GET request for doctorRouter...
 doctorRouter.get('/doctor', async (req, res) => {
   try {
       const doctor = await doctorSchema.find();
@@ -14,7 +14,7 @@ doctorRouter.get('/doctor', async (req, res) => {
   }
 });
 
-// post request for doctorRouter...
+// POST request for doctorRouter...
 doctorRouter.post('/doctor', async (req, res) => {
   try {
       const { name, specialization, contact  } = req.body;
@@ -27,7 +27,7 @@ doctorRouter.post('/doctor', async (req, res) => {
   }
 });
 
-// put request for doctorRouter...
+// PUT request for doctorRouter...
 doctorRouter.put('/updateDoctor/:id', async (req, res) => {
   try {
     const { id } = req.params;

@@ -4,7 +4,9 @@ const cooki = require("../models/cookiSchema");
 const cookiSchema = require("../models/cookiSchema");
 
 
-// get request for cooki(cookAI)...
+
+
+// GET request for cooki(cookAI)...
 cookiRouter.get('/cooki', async (req, res) => {
   try {
     const cooki = await cookiSchema.find();
@@ -17,7 +19,9 @@ cookiRouter.get('/cooki', async (req, res) => {
   
 });
 
-// post request for  cooki(cookAI)...
+
+
+// POST request for  cooki(cookAI)...
 cookiRouter.post('/cooki', async (req, res) => {
     try {
         const { name, description, features, sampleInteractions, personality, version  } = req.body;
@@ -30,7 +34,9 @@ cookiRouter.post('/cooki', async (req, res) => {
     }
   });
 
-// put request for cooki(cookAI)...
+
+
+// PUT request for cooki(cookAI)...
 cookiRouter.put('/updateCooki/:id', async (req, res) => {
   try {
     const { id } = req.params;

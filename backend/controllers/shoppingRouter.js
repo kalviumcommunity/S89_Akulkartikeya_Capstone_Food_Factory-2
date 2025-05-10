@@ -3,7 +3,7 @@ const shoppingRouter = express.Router();
 const shopping = require('../models/shoppingSchema');
 const shoppingSchema = require('../models/shoppingSchema');
 
-// get request for shoppingRouter...
+// GET request for shoppingRouter...
 shoppingRouter.get('/shopping', async (req, res) => {
   try {
     const shopping = await shoppingSchema.find();
@@ -17,7 +17,7 @@ shoppingRouter.get('/shopping', async (req, res) => {
 });
 
 
-// post request for shoppingRouter...
+// POST request for shoppingRouter...
 shoppingRouter.post('/shopping', async (req, res) => {
   try {
     const { name, price, category, quantity } = req.body;
