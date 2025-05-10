@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 
+
+// Define the schema for non-vegetarian recipes
+if (mongoose.models.Veg) {
+  delete mongoose.models.Veg;
+}
 const vegSchema = new mongoose.Schema({
   name: {
     type: String,

@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 
+// Check if the model already exists to avoid overwriting it
+if (mongoose.models.NonVeg) {
+  delete mongoose.models.NonVeg;
+}
 const nonVegSchema = new mongoose.Schema({
   name: {
     type: String,
