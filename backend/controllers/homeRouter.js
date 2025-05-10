@@ -53,6 +53,55 @@ homeRouter.put('/updateHome/:id', async (req, res) => {
   }
 });
 
+// DELETE request for homeRouter...
+homeRouter.delete('/deleteHome/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send({ msg: "Please provide id" });
+    }
+
+    const deletedHome = await homeSchema.findByIdAndDelete({ _id: id });
+    if (!deletedHome) {
+      return res.status(404).send({ msg: "Home entry not found" });
+    }
+
+    res.status(200).send({ msg: "Home entry deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting home entry:", error);
+    res.status(500).send({ msg: "Error deleting home entry" });
+  }
+});
+
+// PATCH request for homeRouter...
+homeRouter.patch('/patchHome/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send({ message: "Please provide a valid id" });
+    }
+
+    const { title, content, dietTips } = req.body;
+    if (!title && !content && !dietTips) {
+      return res.status(400).send({ message: "Please provide at least one field to update" });
+    }
+
+    const updatedHome = await homeSchema.findByIdAndUpdate(
+      id,
+      { title, content, dietTips },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedHome) {
+      return res.status(404).send({ message: "Home entry not found" });
+    }
+
+    res.status(200).send({ message: "Home entry updated successfully", home: updatedHome });
+  } catch (error) {
+    console.error("Error updating home entry:", error.message);
+    res.status(500).send({ message: "Error updating home entry", error: error.message });
+  }
+});
 
 
 module.exports = homeRouter;

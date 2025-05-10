@@ -56,6 +56,55 @@ shoppingRouter.put('/updateShopping/:id', async (req, res) => {
   }
 });
 
+// DELETE request for shoppingRouter...
+shoppingRouter.delete('/deleteShopping/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send({ msg: "Please provide id" });
+    }
+
+    const deletedShopping = await shoppingSchema.findByIdAndDelete({ _id: id });
+    if (!deletedShopping) {
+      return res.status(404).send({ msg: "Shopping item not found" });
+    }
+
+    res.status(200).send({ msg: "Shopping item deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting shopping item:", error);
+    res.status(500).send({ msg: "Error deleting shopping item" });
+  }
+});
+
+// PATCH request for shoppingRouter...
+shoppingRouter.patch('/patchShopping/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send({ message: "Please provide a valid id" });
+    }
+
+    const { name, price, category, quantity } = req.body;
+    if (!name && !price && !category && !quantity) {
+      return res.status(400).send({ message: "Please provide at least one field to update" });
+    }
+
+    const updatedShopping = await shoppingSchema.findByIdAndUpdate(
+      id,
+      { name, price, category, quantity },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedShopping) {
+      return res.status(404).send({ message: "Shopping item not found" });
+    }
+
+    res.status(200).send({ message: "Shopping item updated successfully", shopping: updatedShopping });
+  } catch (error) {
+    console.error("Error updating shopping item:", error.message);
+    res.status(500).send({ message: "Error updating shopping item", error: error.message });
+  }
+});
 
 
 module.exports = shoppingRouter;
