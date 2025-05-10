@@ -26,7 +26,7 @@ const vegSchema = new mongoose.Schema({
     default: "Vegetarian",
   },
 }, {
-  timestamps: true, 
+  timestamps: true, // Automatically adds createdAt and updatedAt fields
 });
 
 const Veg = mongoose.model("Veg", vegSchema);
