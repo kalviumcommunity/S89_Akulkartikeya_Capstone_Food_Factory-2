@@ -14,7 +14,7 @@ shoppingRouter.get('/shopping', async (req, res) => {
       console.error('Error fetching shopping:', error);
       res.status(500).send({ message: 'Internal Server Error' }); 
   }
-});
+}); 
 
 
 // POST request for shoppingRouter...
