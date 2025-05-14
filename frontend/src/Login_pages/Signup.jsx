@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../LoginPage_css/Signup.css';
 
 const Signup = () => {
@@ -10,6 +11,7 @@ const Signup = () => {
   });
 
   const [submitted, setSubmitted] = useState(false); // For showing success message
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -49,7 +51,7 @@ const Signup = () => {
         <h2>Create an Account</h2>
       </div>
       <p>
-        Already have an account? <span className="login-link">Log in</span>
+        Already have an account? <span className="login-link" onClick={() => navigate('/login')}>Log in</span>
       </p>
 
       <button className="signup-google">

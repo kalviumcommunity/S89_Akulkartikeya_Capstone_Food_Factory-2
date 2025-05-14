@@ -14,7 +14,7 @@
 }
 
 .signup-box {
-  background: url('https://i.pinimg.com/736x/4d/88/5a/4d885aa613e7344d71699c8308327dc0.jpg') no-repeat center center fixed !important;
+  background-color: black;
 background-size: cover !important;
   color: white;
   padding: 2rem;
@@ -147,7 +147,7 @@ form small {
   margin-top: 15px;
   color: #00d96c;
   font-weight: bold;
-  background-color: #112;
+  background-color: rgb(0, 0, 0);
   padding: 10px;
   border-radius: 8px;
   text-align: center;
@@ -166,6 +166,6 @@ form small {
 }
 
 body {
-  background: url('https://i.pinimg.com/736x/64/ed/50/64ed50b2ecb41dfd3c67c57c63dca179.jpg') no-repeat center center fixed !important;
+  background: url('https://i.pinimg.com/736x/8f/f8/3a/8ff83ae61206c7d608238ab06385698b.jpg') no-repeat center center fixed !important;
   background-size: cover !important;
 }
