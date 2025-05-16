@@ -1,0 +1,171 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.signup-box {
+  background-color: black;
+background-size: cover !important;
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 400px;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+.signup-box h2 {
+  margin: 0;
+}
+
+.signup-box p {
+  margin: 5px 0 20px;
+  font-size: 14px;
+}
+
+.login-link {
+  color: #c29a6b;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.signup-google,
+.signup-mobile {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: 1px solid #555;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-google img {
+  width: 18px;
+  height: 18px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #999;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  height: 1px;
+  background: #555;
+}
+
+.divider span {
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #fcebd4;
+  color: #000;
+}
+
+form small {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.checkbox-row input {
+  margin-right: 8px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-btn,
+.signup-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cancel-btn {
+  background: #f3e5d0;
+  color: #000;
+}
+
+.signup-btn {
+  background: #b4844e;
+  color: white;
+}
+
+.success-message {
+  margin-top: 15px;
+  color: #00d96c;
+  font-weight: bold;
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.header-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-icon {
+  width: 32px;
+  height: 32px;
+}
+
+body {
+  background: url('https://i.pinimg.com/736x/8f/f8/3a/8ff83ae61206c7d608238ab06385698b.jpg') no-repeat center center fixed !important;
+  background-size: cover !important;
+}
