@@ -169,3 +169,40 @@ body {
   background: url('https://i.pinimg.com/736x/8f/f8/3a/8ff83ae61206c7d608238ab06385698b.jpg') no-repeat center center fixed !important;
   background-size: cover !important;
 }
+
+.mobile-input-modal {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.mobile-input-modal label {
+  margin-bottom: 8px;
+}
+.mobile-input-modal input[type="tel"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #fcebd4;
+  color: #000;
+  margin-bottom: 12px;
+}
+.mobile-input-modal .save-btn {
+  background: #b4844e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
