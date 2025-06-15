@@ -1,0 +1,107 @@
+/* ...existing code... */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFF1DC;
+  padding: 16px 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2.5px solid #8C663A;
+}
+.navbar-left, .navbar-center, .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.navbar-center {
+  gap: 0;
+}
+.navbar-item {
+  margin: 0 18px;
+  font-size: 1.1rem;
+  color: #201d1d;
+  font-family: Playfair Display;
+  font-weight: 1000;
+  cursor: pointer;
+  transition: color 0.2s;
+  letter-spacing: 0.5px;
+  
+}
+.navbar-item:hover {
+  color: #8C663A;
+}
+.explore-section {
+  margin: 40px auto 0 auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.explore-heading {
+  font-size: 2.3rem;
+  font-family:  serif;
+  font-weight: 900;
+  color: #000000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.explore-description {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #000000;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.explore-description p {
+  margin: 4px 0;
+}
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  justify-items: center;
+  margin-top: 10px;
+}
+.explore-box {
+  background: #FFF1DC;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(140, 102, 58, 0.10);
+  padding: 32px 18px 18px 18px;
+  width: 180px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+  border: 2.5px solid #8C663A;
+}
+.explore-box:hover {
+  box-shadow: 0 4px 16px rgba(140, 102, 58, 0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+.box-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+}
+.box-sub {
+  font-size: 0.98rem;
+  color: #4d3c1a;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.box-img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+/* ...existing code... */
