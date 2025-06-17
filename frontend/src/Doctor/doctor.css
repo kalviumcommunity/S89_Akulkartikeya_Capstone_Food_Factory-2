@@ -1,0 +1,84 @@
+.doctor-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8C663A 0%, #F6E6CD 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+}
+
+.doctor-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.doctor-header h1 {
+  font-size: 2.5rem;
+  color: #8C663A;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-header p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.doctor-services {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.service-box {
+  background: #F6E6CD;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+  padding: 2rem 1.5rem;
+  width: 260px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s;
+  border: 2px solid transparent;
+}
+
+.service-box:hover, .service-box.active {
+  border: 2px solid #8C663A;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.15);
+}
+
+.service-box h2 {
+  font-size: 1.3rem;
+  color: #8C663A;
+  margin: 0;
+}
+
+.doctor-details {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #F6E6CD;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+  padding: 2rem 1.5rem;
+  animation: fadeIn 0.4s;
+}
+
+.doctor-details h3 {
+  color: #8C663A;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.doctor-details li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -11,7 +11,7 @@ const Navbar = () => {
       </div>
       <span className="navbar-item" onClick={() => navigate('/explore-recipes')} style={{ cursor: 'pointer' }}>Explore Recipes</span>
       <span className="navbar-item" onClick={() => navigate('/cooki-ai')} style={{ cursor: 'pointer' }}>COOKI(ai)</span>
-      <span className="navbar-item" onClick={() => navigate('/shopping-grocery')} style={{ cursor: 'pointer' }}>Shopping and Grocery</span>
+      <span className="navbar-item" onClick={() => navigate('/shop')} style={{ cursor: 'pointer' }}>Shopping and Grocery</span>
       <span className="navbar-item doctor" onClick={() => navigate('/doctor')} style={{ cursor: 'pointer' }}>Doctor</span>
     </nav>
   );

@@ -12,7 +12,7 @@ const Navbar = () => {
       </div>
       <span className="navbar-item" onClick={() => navigate('/explore-recipes')}>Explore Recipes</span>
       <span className="navbar-item active" onClick={() => navigate('/cooki-ai')}>COOKI(ai)</span>
-      <span className="navbar-item" onClick={() => navigate('/shopping-grocery')}>Shopping and Grocery</span>
+      <span className="navbar-item" onClick={() => navigate('/shop')}>Shopping and Grocery</span>
       <span className="navbar-item doctor" onClick={() => navigate('/doctor')}>Doctor</span>
     </nav>
   );
@@ -99,7 +99,6 @@ const COOKI = () => {
     </div>
   );
 };
-
 
 
 
